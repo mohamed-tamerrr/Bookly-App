@@ -11,8 +11,9 @@ class CustomItemList extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 15.0,
+          padding: const EdgeInsets.only(
+            right: 15.0,
+            top: 20,
           ),
           child: CustomItem(),
         ),
