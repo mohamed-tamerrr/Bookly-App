@@ -1,10 +1,9 @@
 import 'package:bookly_app/core/utils/app_styles.dart';
+import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_appbar_book_details.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_item.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -38,8 +37,35 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           SizedBox(height: 20),
           BookRating(),
+          SizedBox(height: 41),
+          BooksAction(),
         ],
       ),
+    );
+  }
+}
+
+class BooksAction extends StatelessWidget {
+  const BooksAction({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: CustomButton(msg: '19.99€')),
+        SizedBox(width: 0.5),
+        Expanded(
+          child: CustomButton(
+            color: Color(0xffEF8262),
+            msg: 'Free preview',
+            textColor: Colors.white,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(18),
+              bottomLeft: Radius.circular(18),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
