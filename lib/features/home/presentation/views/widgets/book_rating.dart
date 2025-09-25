@@ -8,10 +8,12 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.amber,
+          size: 15,
         ),
         SizedBox(width: 6),
         Text('4.8', style: AppStyles.styleRegular16),
