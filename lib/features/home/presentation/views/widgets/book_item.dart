@@ -11,9 +11,7 @@ class BookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(
-        context,
-      ).push(AppRouter.kBookDetailsView),
+      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
       child: SizedBox(
         height: 125,
         child: Row(
@@ -34,40 +32,30 @@ class BookItem extends StatelessWidget {
             SizedBox(width: 20),
             Expanded(
               child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width:
-                        MediaQuery.sizeOf(context).width *
-                        .5,
+                    width: MediaQuery.sizeOf(context).width * .5,
                     child: Text(
                       'The Jungle Book',
 
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: AppStyles.styleRegular20
-                          .copyWith(),
+                      style: AppStyles.styleRegular20.copyWith(),
                     ),
                   ),
                   SizedBox(height: 3),
                   Text(
                     'Rudyard Kipling',
-                    style: AppStyles.styleRegular14
-                        .copyWith(
-                          color: Colors.white.withOpacity(
-                            .7,
-                          ),
-                        ),
+                    style: AppStyles.styleRegular14.copyWith(
+                      color: Colors.white.withOpacity(.7),
+                    ),
                   ),
                   SizedBox(height: 3),
                   Row(
                     children: [
-                      Text(
-                        '19.99 €',
-                        style: AppStyles.styleRegular20,
-                      ),
+                      Text('19.99 €', style: AppStyles.styleRegular20),
                       Spacer(),
                       BookRating(),
                     ],

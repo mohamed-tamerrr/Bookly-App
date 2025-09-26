@@ -10,8 +10,7 @@ class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
-  State<SplashViewBody> createState() =>
-      _SplashViewBodyState();
+  State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
 class _SplashViewBodyState extends State<SplashViewBody>

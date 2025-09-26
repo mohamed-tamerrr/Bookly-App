@@ -12,16 +12,11 @@ class CustomItemViewBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: width * .16,
-          ),
+          padding: EdgeInsets.symmetric(horizontal: width * .16),
           child: const CustomItem(),
         ),
         SizedBox(height: 42),
-        Text(
-          'The Jungle Book',
-          style: AppStyles.styleRegular30,
-        ),
+        Text('The Jungle Book', style: AppStyles.styleRegular30),
         SizedBox(height: 13),
         Text(
           'Rudyard Kipling',

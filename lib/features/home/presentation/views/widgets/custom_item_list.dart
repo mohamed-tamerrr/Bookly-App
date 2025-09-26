@@ -12,10 +12,7 @@ class CustomItemList extends StatelessWidget {
         padding: EdgeInsets.only(left: 30),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(
-            right: 15.0,
-            top: 20,
-          ),
+          padding: const EdgeInsets.only(right: 15.0, top: 20),
           child: CustomItem(),
         ),
       ),

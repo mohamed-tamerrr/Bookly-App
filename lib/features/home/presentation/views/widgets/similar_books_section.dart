@@ -10,10 +10,7 @@ class SimilarBooksSection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text(
-          'You can also like',
-          style: AppStyles.styleRegular14,
-        ),
+        Text('You can also like', style: AppStyles.styleRegular14),
         SimilarCustomItemList(),
       ],
     );
