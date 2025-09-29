@@ -5,7 +5,7 @@ import 'package:bookly_app/features/home/data/models/book_model/book_model.dart'
 
 abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>>
-  fetchBestSellerBooks();
+  fetchNewestBooks();
 
   Future<Either<Failure, List<BookModel>>> fetchBooks();
 }
