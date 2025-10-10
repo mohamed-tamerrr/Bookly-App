@@ -15,10 +15,10 @@ final class NewsBooksFail extends NewsBooksCubitState {
   const NewsBooksFail({required this.errMsg});
 }
 
-final class NewsBooksLoading extends NewsBooksCubitState {}
+final class NewestBooksLoading extends NewsBooksCubitState {}
 
-final class NewsBooksSuccess extends NewsBooksCubitState {
+final class NewestBooksSuccess extends NewsBooksCubitState {
   final List<BookModel> books;
 
-  const NewsBooksSuccess({required this.books});
+  const NewestBooksSuccess({required this.books});
 }
