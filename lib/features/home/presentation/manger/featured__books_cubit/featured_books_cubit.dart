@@ -9,15 +9,15 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
   FeaturedBooksCubit(this.homeRepo)
     : super(FeaturedBooksInitial());
   final HomeRepo homeRepo;
-  Future<void> fetchBooks() async {
+  Future<void> fetchFeaturedBooks() async {
     emit(FeaturedBooksLoading());
-    var result = await homeRepo.fetchBooks();
+    var result = await homeRepo.fetchFeaturedBooks();
     result.fold(
-      (l) {
-        emit(FeaturedBooksFailure(errMsg: l.errMsg));
+      (failure) {
+        emit(FeaturedBooksFailure(errMsg: failure.errorMassage));
       },
-      (r) {
-        emit(FeaturedBooksSuccess(books: r));
+      (books) {
+        emit(FeaturedBooksSuccess(books: books));
       },
     );
   }
