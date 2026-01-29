@@ -1,32 +1,28 @@
 import 'package:bookly_app/core/utils/app_images.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
-
+  const BookItem({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => GoRouter.of(context).push(AppRouter.kBookDetailsView),
+      onTap: () =>
+          GoRouter.of(context).push(AppRouter.kBookDetailsView),
       child: SizedBox(
         height: 125,
         child: Row(
           children: [
             AspectRatio(
               aspectRatio: 71 / 113,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.blue,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AppImages.test),
-                  ),
-                ),
+              child: CustomItem(
+                imageUrl: book.volumeInfo.imageLinks.thumbnail,
               ),
             ),
             SizedBox(width: 20),
@@ -38,7 +34,7 @@ class BookItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.sizeOf(context).width * .5,
                     child: Text(
-                      'The Jungle Book',
+                      book.volumeInfo.title!,
 
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -47,7 +43,7 @@ class BookItem extends StatelessWidget {
                   ),
                   SizedBox(height: 3),
                   Text(
-                    'Rudyard Kipling',
+                    book.volumeInfo.authors![0],
                     style: AppStyles.styleRegular14.copyWith(
                       color: Colors.white.withOpacity(.7),
                     ),
@@ -55,7 +51,10 @@ class BookItem extends StatelessWidget {
                   SizedBox(height: 3),
                   Row(
                     children: [
-                      Text('19.99 €', style: AppStyles.styleRegular20),
+                      Text(
+                        'Free',
+                        style: AppStyles.styleRegular20,
+                      ),
                       Spacer(),
                       BookRating(),
                     ],
